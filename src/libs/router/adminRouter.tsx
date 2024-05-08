@@ -6,11 +6,12 @@ import RootLayout from "../../components/layouts/layout";
 const AdminRouter: React.FC = () => {
     const navigate = useNavigate();
     const location = useLocation();
+
     const sessionToken = getSessionToken();
 
     useEffect(() => {
         if (!sessionToken) {
-            navigate("/signin");
+            navigate("/");
         } else {
             if (location.pathname === "/signin") {
                 navigate("/");
